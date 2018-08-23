@@ -1,0 +1,7 @@
+{
+  "name": "bhagwat-gita",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
