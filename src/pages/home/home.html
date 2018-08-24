@@ -5,8 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let music of musicCollection">{{music}}
-    </ion-item>  
+  <ion-list>  
+    <a ion-item *ngFor="let music of musicCollection" (click)="openModal({data: music})"> {{music}} </a> 
   </ion-list>
 </ion-content>

@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MusicPlayerPage} from '../pages/music-player/music-player'
 import { MusicServiceProvider } from '../providers/music-service/music-service';
+import {ModalContentPage} from '../pages/modal-content/modal-content'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MusicServiceProvider } from '../providers/music-service/music-service';
     ContactPage,
     HomePage,
     TabsPage,
-    MusicPlayerPage
+    MusicPlayerPage,
+    ModalContentPage
   ],
   imports: [
     BrowserModule,HttpClientModule,
@@ -33,7 +35,8 @@ import { MusicServiceProvider } from '../providers/music-service/music-service';
     ContactPage,
     HomePage,
     TabsPage,
-    MusicPlayerPage
+    MusicPlayerPage,
+    ModalContentPage
   ],
   providers: [
     StatusBar,
