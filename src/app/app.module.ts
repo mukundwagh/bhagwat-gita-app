@@ -12,7 +12,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MusicPlayerPage} from '../pages/music-player/music-player'
 import { MusicServiceProvider } from '../providers/music-service/music-service';
-import {ModalContentPage} from '../pages/modal-content/modal-content'
+import {ModalContentPage} from '../pages/modal-content/modal-content';
+import { Media } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -39,10 +41,12 @@ import {ModalContentPage} from '../pages/modal-content/modal-content'
     ModalContentPage
   ],
   providers: [
+    Media,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MusicServiceProvider
+    MusicServiceProvider,
+    File
   ]
 })
 export class AppModule {}
