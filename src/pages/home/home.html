@@ -4,8 +4,24 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>  
-    <a ion-item *ngFor="let music of musicCollection" (click)="openModal({data: music})"> {{music}} </a> 
-  </ion-list>
+<ion-content>
+    <ion-list class="accordion-list"> 
+        <ion-list-header *ngFor="let chapter of musicCollection; let i = index" no-lines no-padding>
+          <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': chapter.open, 'section': !chapter.open}">
+            <ion-icon item-right name="arrow-dropright-circle" *ngIf="!chapter.open"></ion-icon>
+            <ion-icon item-right name="arrow-dropdown-circle" *ngIf="chapter.open"></ion-icon>
+            {{chapter.chapter_name.replace('_',' ') | titlecase}}
+              </button>
+              <ion-list *ngIf="chapter.open" no-lines>
+                  <a ion-item *ngFor="let verse of chapter.verses; let j = index" (click)="openModal({data: verse})" detail-none class="child-item" text-wrap>{{verse.verse_name.replace('_',' ') | titlecase}}</a>
+              </ion-list>
+        </ion-list-header>
+    </ion-list>
+
+  
+
+      
+  <!-- <ion-list>  
+    <a ion-item *ngFor="let music of getChapterKeys()" (click)="openModal({data: music})"> {{music.replace('_',' ') | titlecase}} </a> 
+  </ion-list> -->
 </ion-content>
